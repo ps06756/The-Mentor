@@ -66,7 +66,7 @@ Each skill is a markdown file with clear instructions. Copy the content and past
 | Skill | Topic | Difficulty | Description |
 |-------|-------|------------|-------------|
 | [URL Shortener](./roles/systems-design/url-shortener-interviewer.md) | System Design | Medium | Distributed systems, scaling, trade-offs |
-| Rate Limiter | System Design | Medium | Token bucket, sliding window, Redis |
+| [Rate Limiter](./roles/systems-design/rate-limiter-interviewer.md) | System Design | Medium | Token bucket, sliding window, Redis |
 | Graph Algorithms | Algorithms | Medium | BFS, DFS, Dijkstra, topological sort |
 | Dynamic Programming | Algorithms | Medium-Hard | Memoization, tabulation, common patterns |
 
@@ -79,6 +79,18 @@ Each skill is a markdown file with clear instructions. Copy the content and past
 | [SQL Optimization](./roles/data-engineer/sql-optimization-interviewer.md) | Database | Medium-Hard | Indexing, query plans, schema design |
 | Data Pipeline Design | Data Engineering | Medium | ETL/ELT, Apache Airflow, data quality |
 | Data Modeling | Data Engineering | Medium | Star schema, snowflake, data warehouses |
+
+#### Systems Architecture & Distributed Systems
+
+| Skill | Topic | Difficulty | Description |
+|-------|-------|------------|-------------|
+| [Database Architecture](./roles/systems-design/database-architecture-interviewer.md) | Databases | Medium-Hard | SQL vs NoSQL, Indexing, ACID, Sharding |
+| [Microservices Architecture](./roles/systems-design/microservices-architecture-interviewer.md) | Architecture | Medium-Hard | DDD, API Gateways, Sagas, Resilience |
+| [Distributed Systems Core](./roles/systems-design/distributed-systems-interviewer.md) | Dist. Systems | Hard | CAP Theorem, Quorums, Consensus, Clocks |
+| [Caching Architecture](./roles/systems-design/caching-architecture-interviewer.md) | Caching | Medium-Hard | Topologies, Eviction, Consistency, Stampedes |
+| [Message Queues](./roles/systems-design/message-queues-interviewer.md) | Messaging | Medium-Hard | Kafka vs RabbitMQ, DLQs, Idempotency, Ordering |
+| [API Design & Gateways](./roles/systems-design/api-design-interviewer.md) | API Design | Medium | REST, Pagination, Auth, API Gateways |
+| [Networking & Load Balancing](./roles/systems-design/networking-load-balancing-interviewer.md) | Networking | Medium-Hard | OSI Layers, L4/L7 LBs, TLS, Consistent Hashing |
 
 #### DevOps / SRE
 
@@ -100,7 +112,7 @@ Each skill is a markdown file with clear instructions. Copy the content and past
 | Skill | Topic | Difficulty | Description |
 |-------|-------|------------|-------------|
 | Design Twitter/X | System Design | Hard | Feed generation, fan-out, consistency |
-| Design Uber | System Design | Hard | Real-time tracking, matching, maps |
+| [Design Uber](./roles/systems-design/uber-interviewer.md) | System Design | Hard | Real-time tracking, matching, maps |
 | Design a Search Engine | System Design | Hard | Indexing, ranking, query understanding |
 | Leadership Principles | Behavioral | All Levels | STAR method, cross-functional collaboration |
 
