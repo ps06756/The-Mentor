@@ -23,19 +23,33 @@ A collection of specialized AI skills for Claude Code and other agentic solution
 
 ## 🚀 Quick Start
 
-### Option 1: Use with Claude Code
+### Option 1: Use with Claude Code (Recommended)
 
-1. **Install Claude Code** if you haven't already
-2. **Copy a skill file** from the `roles/` directory
-3. **Start your interview session**:
+Claude Code officially supports "skills" out of the box.
 
-```bash
-# Example: Start Arrays & HashMaps practice for SWE-I
-cat roles/swe-i/arrays-hashmaps-interviewer.md | claude
+1. **Install Claude Code** if you haven't already.
+2. **Clone this repository** to your local machine:
+   ```bash
+   git clone https://github.com/yourusername/The-Mentor.git
+   ```
+3. **Link the skills directory**: You can either copy the roles into your global Claude skills directory, or simply start Claude inside the downloaded repository folder.
+
+Alternatively, register specific skills in your `~/.claude.json`:
+
+```json
+{
+  "skills": [
+    {
+      "name": "interviewer-sysdesign-uber",
+      "path": "/absolute/path/to/The-Mentor/roles/systems-design/uber-interviewer.md",
+      "description": "System Design Interviewer (Uber)"
+    }
+  ]
+}
 ```
 
-Or simply tell Claude:
-> "Load the skill from `roles/swe-i/arrays-hashmaps-interviewer.md` and start interviewing me"
+4. **Start your interview session**:
+> `claude "Use the interviewer-sysdesign-uber skill and start my mock interview."`
 
 ### Option 2: Use with Other AI Assistants
 
