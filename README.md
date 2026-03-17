@@ -284,30 +284,45 @@ The-Mentor/
 
 ### Claude Code
 
-Add to your `.claude/settings.json`:
+Claude Code now natively supports "skills" via your configuration file. Add this to your `~/.claude/settings.json` (or your project's local `.claude.json`) to register The Mentor interviewers:
+
 ```json
 {
   "skills": [
     {
-      "name": "arrays-hashmaps-swe-i",
-      "path": "/path/to/roles/swe-i/arrays-hashmaps-interviewer.md"
+      "name": "interviewer-arrays",
+      "path": "/path/to/The-Mentor/roles/swe-i/arrays-hashmaps-interviewer.md",
+      "description": "SWE-I Interviewer for Arrays & HashMaps"
+    },
+    {
+      "name": "interviewer-sysdesign-uber",
+      "path": "/path/to/The-Mentor/roles/systems-design/uber-interviewer.md",
+      "description": "Senior System Design Interviewer (Uber/Ride-Sharing)"
     }
+    // Add any other skills you wish to practice!
   ]
 }
 ```
 
-### VS Code
+Once registered, you can simply open your terminal and say:
+> `claude "Use the interviewer-sysdesign-uber skill and start my mock interview."`
 
-Coming soon: Extension for quick skill selection and session management.
+*Alternative (No config required):*
+You can pipe the skill directly into Claude Code from your terminal:
+```bash
+cat roles/systems-design/database-architecture-interviewer.md | claude "Adopt this persona and start my mock interview"
+```
 
-### Other Tools
+### VS Code & Cursor
 
-Each skill is just markdown - use with:
-- Cursor
-- GitHub Copilot
-- ChatGPT
-- Claude.ai web interface
-- Any AI assistant that accepts system prompts
+If you are using AI-powered IDEs like Cursor or VS Code (with GitHub Copilot Chat / Cline):
+1. Create a `system-design.md` file in your scratchpad.
+2. Paste the contents of the desired role (e.g., `rate-limiter-interviewer.md`).
+3. Tag the file in your chat (e.g., `@system-design.md`) and say: *"Read this file and adopt the persona. Begin the interview."*
+
+### Web Interfaces (ChatGPT / Claude.ai / Gemini)
+
+Each skill is standard Markdown. Simply copy the entire contents of the `.md` file and paste it as your first prompt in a new chat session. The AI will immediately adopt the persona and begin the interview.
 
 ---
 
