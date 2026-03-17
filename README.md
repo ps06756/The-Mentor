@@ -23,33 +23,22 @@ A collection of specialized AI skills for Claude Code and other agentic solution
 
 ## 🚀 Quick Start
 
-### Option 1: Use with Claude Code (Recommended)
+### Option 1: Use with Claude Code (Agent Skills)
 
-Claude Code officially supports "skills" out of the box.
+Claude Code natively supports adding custom agents and skills via URL or local file paths. 
 
 1. **Install Claude Code** if you haven't already.
-2. **Clone this repository** to your local machine:
-   ```bash
-   git clone https://github.com/yourusername/The-Mentor.git
-   ```
-3. **Link the skills directory**: You can either copy the roles into your global Claude skills directory, or simply start Claude inside the downloaded repository folder.
+2. **Add a specific interviewer skill** directly from this repository using the `claude skill add` command:
 
-Alternatively, register specific skills in your `~/.claude.json`:
-
-```json
-{
-  "skills": [
-    {
-      "name": "interviewer-sysdesign-uber",
-      "path": "/absolute/path/to/The-Mentor/roles/systems-design/uber-interviewer.md",
-      "description": "System Design Interviewer (Uber)"
-    }
-  ]
-}
+```bash
+# Example: Add the System Design Uber Interviewer
+claude skill add https://raw.githubusercontent.com/ps06756/The-Mentor/main/roles/systems-design/uber-interviewer.md
 ```
 
-4. **Start your interview session**:
-> `claude "Use the interviewer-sysdesign-uber skill and start my mock interview."`
+3. **Start your interview session**:
+> `claude "Use the uber-interviewer skill and start my mock interview."`
+
+You can add any interviewer from the `roles/` directory using its raw GitHub URL.
 
 ### Option 2: Use with Other AI Assistants
 
@@ -296,42 +285,22 @@ The-Mentor/
 
 ## 🤝 Integrations
 
-### Claude Code (Native Skills Integration)
+### Claude Code (Agent Skills Integration)
 
-Claude Code officially supports extending its capabilities via a **skills configuration file**. This is the recommended way to use The Mentor, as it integrates deeply with the CLI.
+Claude Code supports extending its capabilities via the `claude skill add` command. This is the recommended way to use The Mentor.
 
-**Step 1:** Create or edit the `~/.claude.json` file in your home directory (or use `.claude.json` in your project root).
+**Step 1:** Open your terminal and run the skill add command with the raw URL of the interviewer you want to practice with.
 
-**Step 2:** Register the interviewers you want to practice with by adding them to the `skills` array. 
-
-Here is an example configuring a few different interview roles:
-
-```json
-{
-  "skills": [
-    {
-      "name": "interviewer-arrays",
-      "path": "/absolute/path/to/The-Mentor/roles/swe-i/arrays-hashmaps-interviewer.md",
-      "description": "SWE-I Interviewer for Arrays & HashMaps"
-    },
-    {
-      "name": "interviewer-sysdesign-uber",
-      "path": "/absolute/path/to/The-Mentor/roles/systems-design/uber-interviewer.md",
-      "description": "Senior System Design Interviewer (Uber/Ride-Sharing)"
-    },
-    {
-      "name": "interviewer-db-arch",
-      "path": "/absolute/path/to/The-Mentor/roles/systems-design/database-architecture-interviewer.md",
-      "description": "Principal Database Architecture Interviewer"
-    }
-  ]
-}
+```bash
+claude skill add https://raw.githubusercontent.com/ps06756/The-Mentor/main/roles/systems-design/uber-interviewer.md
 ```
 
-**Step 3:** Start your mock interview! Open your terminal, run `claude`, and invoke the skill:
-> *"Load the interviewer-sysdesign-uber skill and begin my system design interview."*
+*Note: You can find the raw URL of any `.md` file in the `roles/` directory by clicking "Raw" on GitHub.*
 
-Claude will automatically read the corresponding skill file and adopt the persona, guiding you through the interview structure natively.
+**Step 2:** Start your mock interview! Run `claude` and invoke the skill you just added:
+> *"Begin my system design interview using the uber-interviewer skill."*
+
+Claude will automatically adopt the persona and guide you through the interview structure natively.
 
 ### VS Code (Cline) & Cursor
 
