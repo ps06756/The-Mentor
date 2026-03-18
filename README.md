@@ -6,6 +6,19 @@ Stop practicing alone. Get realistic, adaptive mock interviews with expert AI ag
 
 ---
 
+## 👥 Created By
+
+This project was built by engineers who've conducted hundreds of interviews at top tech companies:
+
+| **Pratik Singhal** | **Abhishek Garg** |
+|:------------------:|:-----------------:|
+| Senior Engineer at Route53, AWS | Senior Engineering Manager at Merge.dev |
+| [LinkedIn](https://www.linkedin.com/in/ps06756/) | [LinkedIn](https://www.linkedin.com/in/abhishek-garg-09040574/) |
+
+We created The Mentor because we believe interview preparation should be accessible, realistic, and effective.
+
+---
+
 ## 🎯 Why Mock Interviews Matter
 
 **The "Thinking Out Loud" Gap**
@@ -41,7 +54,44 @@ This is the #1 reason qualified candidates fail interviews.
 
 ## 🚀 How to Use
 
-*[Details to be added by project owner]*
+### Step 1: Download the Repository
+
+Download the latest release as a ZIP file:
+
+```bash
+curl -L https://github.com/ps06756/The-Mentor/archive/refs/tags/v1.0.0.zip -o The-Mentor.zip
+unzip The-Mentor.zip
+```
+
+Or manually download from: https://github.com/ps06756/The-Mentor/archive/refs/tags/v1.0.0.zip
+
+### Step 2: Install in Claude Code
+
+Open Claude Code and run the following commands:
+
+```
+/plugin install <path_to_the_directory_downloaded>
+```
+
+Then install the coding interview agent:
+
+```
+/plugin install coding-interview-agent
+```
+
+### Step 3: Start Preparing
+
+Once installed, you can start practicing with prompts like:
+
+> *"Can you help me prepare for system design interview using coding-interview-agent?"*
+
+Or for other topics:
+
+> *"Can you help me prepare for SQL optimization interview using coding-interview-agent?"*
+
+> *"Can you help me prepare for distributed systems interview using coding-interview-agent?"*
+
+The agent will take over and conduct a realistic mock interview tailored to your chosen topic.
 
 ---
 
