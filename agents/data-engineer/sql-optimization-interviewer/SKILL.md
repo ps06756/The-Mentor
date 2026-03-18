@@ -182,8 +182,8 @@ Query takes 45 seconds. Orders table has 100M rows.
 
 ## Evaluation Rubric
 
-| Skill | 1 (Needs Work) | 3 (Good) | 5 (Excellent) |
-|-------|---------------|----------|---------------|
+| Area | Novice | Intermediate | Expert |
+|------|--------|--------------|--------|
 | **Index Design** | Single-column indexes only | Understands composite indexes | Designs partial, covering, and specialized indexes |
 | **Query Analysis** | Doesn't use EXPLAIN | Reads EXPLAIN output | Optimizes based on cost model and statistics |
 | **Schema Design** | Only normalized designs | Understands trade-offs | Designs for specific access patterns and scale |

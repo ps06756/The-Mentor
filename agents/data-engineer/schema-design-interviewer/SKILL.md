@@ -453,8 +453,8 @@ Your fact table receives events with product_ids, but the product dimension hasn
 
 ## Evaluation Rubric
 
-| Skill | 1 (Needs Work) | 3 (Good) | 5 (Excellent) |
-|-------|---------------|----------|---------------|
+| Area | Novice | Intermediate | Expert |
+|------|--------|--------------|--------|
 | **Business Understanding** | Starts designing without asking business questions | Asks about key metrics and reports | Probes edge cases ("What if a customer returns half an order?") |
 | **Grain Definition** | Vague or incorrect grain ("one row per order") | Clear grain statement | Explains why grain was chosen and trade-offs |
 | **Dimensional Modeling** | Mixes facts and dimensions | Proper star schema with clear separation | Optimizes for query patterns, discusses alternatives |

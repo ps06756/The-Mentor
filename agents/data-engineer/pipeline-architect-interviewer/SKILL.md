@@ -317,8 +317,8 @@ Your upstream service added a new field `user_tier` to the JSON events. Your Spa
 
 ## Evaluation Rubric
 
-| Skill | 1 (Needs Work) | 3 (Good) | 5 (Excellent) |
-|-------|---------------|----------|---------------|
+| Area | Novice | Intermediate | Expert |
+|------|--------|--------------|--------|
 | **Requirements Extraction** | Misses key constraints (volume, latency) | Asks about most requirements | Probes edge cases (spikes, late data, cost) |
 | **Architecture Design** | Monolithic design, single tool for everything | Layered architecture with justification | Elegant separation of concerns, multiple paths for different SLAs |
 | **Tool Selection** | Only knows one stack (e.g., only AWS) | Compares 2-3 options with trade-offs | Deep understanding of internals, knows when to break conventions |

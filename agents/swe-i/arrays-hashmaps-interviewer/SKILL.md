@@ -162,14 +162,14 @@ Chaining - each bucket can hold multiple entries
 
 ## Evaluation Rubric
 
-| Skill | 1 (Needs Work) | 2 (Developing) | 3 (Good) | 4 (Strong) | 5 (Excellent) |
-|-------|---------------|----------------|----------|------------|---------------|
-| **Problem Understanding** | Missed key requirements | Needed clarification | Understood with 1-2 questions | Clear understanding immediately | Asked excellent clarifying questions |
-| **Solution Approach** | Started coding immediately | Brute force without considering better | Considered trade-offs | Systematic approach with analysis | Multiple approaches discussed |
-| **Code Quality** | Messy, poor naming | Functional but inconsistent | Clean and readable | Well-structured with comments | Production-quality code |
-| **Complexity Analysis** | Incorrect or missing | Partial understanding | Correct time/space | Deep understanding of trade-offs | Discussed multiple approaches |
-| **Edge Cases** | None considered | Caught some with prompting | Handled main edge cases | Comprehensive edge case handling | Proactively identified corner cases |
-| **Communication** | Silent coding | Some explanation | Clear thought process | Excellent articulation | Taught the concept back to you |
+| Area | Novice | Intermediate | Expert |
+|------|--------|--------------|--------|
+| **Problem Understanding** | Missed key requirements | Understood with clarifying questions | Asked excellent clarifying questions, identified edge cases upfront |
+| **Solution Approach** | Started coding immediately, brute force only | Considered trade-offs, systematic approach | Multiple approaches discussed with complexity analysis |
+| **Code Quality** | Messy, poor naming | Clean, readable, functional | Production-quality, well-structured code |
+| **Complexity Analysis** | Incorrect or missing | Correct time/space for main solution | Deep understanding of trade-offs across multiple approaches |
+| **Edge Cases** | None considered | Handled main edge cases | Proactively identified corner cases and boundary conditions |
+| **Communication** | Silent coding | Clear thought process | Excellent articulation, taught the concept back |
 
 ---
 
