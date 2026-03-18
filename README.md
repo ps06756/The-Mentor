@@ -1,165 +1,199 @@
-# The Mentor
+# 🎓 The Mentor
 
-> **30 AI Mock Interviewers for Software Engineering Interview Prep**
+> **AI-Powered Interview Preparation for Software Engineers**
 
-Practice realistic technical interviews with AI agents that adapt to your level, give progressive hints when you're stuck, and evaluate your performance with detailed scorecards.
-
-**30 skills** | **7 domains** | **Easy to Staff+ difficulty** | **Works with Claude Code, ChatGPT, Cursor, and more**
+A collection of specialized AI skills for Claude Code and other agentic solutions to help you prepare for software engineering interviews at top tech companies.
 
 ---
 
-## Quick Start
+## 👥 Created By
 
-### Option 1: Clone and run locally (recommended)
+This project was built by engineers who've conducted hundreds of interviews at top tech companies:
+
+| **Pratik Singhal** | **Abhishek Garg** |
+|:------------------:|:-----------------:|
+| Senior Engineer at Route53, AWS | Senior Engineering Manager at Merge.dev |
+| [LinkedIn](https://www.linkedin.com/in/ps06756/) | [LinkedIn](https://www.linkedin.com/in/abhishek-garg-09040574/) |
+
+We created The Mentor because we believe interview preparation should be accessible, realistic, and effective.
+
+---
+
+## 🌟 What is this?
+
+**The Mentor** is an open-source repository of AI interviewers—specialized prompts and instructions that transform your AI coding assistant into an expert technical interviewer. Each "skill" represents a different interview domain, difficulty level, and role type.
+
+### Why Use The Mentor?
+
+- 🎯 **Role-Specific Practice**: Interviewers tailored for SWE-I, Data Engineer, Frontend, Backend, and more
+- 🔄 **Adaptive Difficulty**: Questions adjust based on your performance
+- 💡 **Intelligent Hints**: 4-level hint system when you get stuck
+- 📊 **Visual Explanations**: ASCII diagrams and Remotion video components for complex concepts
+- 📈 **Progress Tracking**: Know exactly where to improve
+- 🎭 **Realistic Personas**: Interviewers with distinct styles and approaches
+
+---
+
+## 🚀 Quick Start
+
+### Step 1: Download the Repository
+
+Download the latest release as a ZIP file:
 
 ```bash
-git clone https://github.com/ps06756/The-Mentor.git
-cd The-Mentor
+curl -L https://github.com/ps06756/The-Mentor/archive/refs/tags/v1.0.0.zip -o The-Mentor.zip
+unzip The-Mentor.zip
 ```
 
-Then start a mock interview by loading any skill category:
+Or manually download from: https://github.com/ps06756/The-Mentor/archive/refs/tags/v1.0.0.zip
 
-```bash
-# System design interviews (13 skills)
-claude --plugin-dir ./agents/systems-design
+### Step 2: Install in Claude Code
 
-# Entry-level coding interviews (4 skills)
-claude --plugin-dir ./agents/swe-i
+Open Claude Code and run the following commands to add the marketplace:
 
-# Mid-level algorithm interviews (2 skills)
-claude --plugin-dir ./agents/swe-ii
-
-# Data engineering interviews (5 skills)
-claude --plugin-dir ./agents/data-engineer
-
-# DevOps & SRE interviews (3 skills)
-claude --plugin-dir ./agents/devops-sre
-
-# ML engineering interviews (2 skills)
-claude --plugin-dir ./agents/ml-engineer
-
-# Behavioral interviews (1 skill)
-claude --plugin-dir ./agents/behavioral
+```
+/plugin marketplace add  <path_to_the_downloaded_folder>
 ```
 
-Once loaded, start your session:
+Then install the coding interview agent:
 
-> *"Use the uber-interviewer skill and start my mock interview."*
+```
+/plugin install coding-interview-agent
+```
 
-### Option 2: Use with ChatGPT, Claude.ai, or any AI assistant
+### Step 3: Start Preparing
 
-1. Open any skill's `SKILL.md` file (e.g., [`agents/systems-design/uber-interviewer/SKILL.md`](./agents/systems-design/uber-interviewer/SKILL.md))
-2. Copy the entire contents
-3. Paste it into your AI assistant as the system prompt or first message
-4. Say: *"Start the interview"*
+Once installed, you can start practicing with prompts like:
 
-### Option 3: Use with Cursor or Cline (VS Code)
+> *"Can you help me prepare for system design interview using coding-interview-agent?"*
 
-1. Copy a skill directory into your workspace (e.g., `agents/systems-design/uber-interviewer/`)
-2. Reference the SKILL.md file: *"Use the instructions in `@agents/systems-design/uber-interviewer/SKILL.md` to conduct a mock interview with me."*
+Or for other topics:
 
----
+> *"Can you help me prepare for SQL optimization interview using coding-interview-agent?"*
 
-## Where Do I Start?
+> *"Can you help me prepare for distributed systems interview using coding-interview-agent?"*
 
-With 30 skills, here's how to pick the right one:
+The agent will take over and conduct a realistic mock interview tailored to your chosen topic.
 
-| Your situation | Start here |
-|---------------|------------|
-| **New grad / first SWE job** | [Arrays & HashMaps](./agents/swe-i/arrays-hashmaps-interviewer/SKILL.md), then [Linked Lists](./agents/swe-i/linked-lists-interviewer/SKILL.md) |
-| **Preparing for SWE-II / mid-level** | [URL Shortener](./agents/systems-design/url-shortener-interviewer/SKILL.md) (classic starter), then [Dynamic Programming](./agents/swe-ii/dynamic-programming-interviewer/SKILL.md) |
-| **Targeting Senior / Staff** | [Design Uber](./agents/systems-design/uber-interviewer/SKILL.md), [Design Twitter](./agents/systems-design/twitter-interviewer/SKILL.md), [Distributed Systems](./agents/systems-design/distributed-systems-interviewer/SKILL.md) |
-| **Data Engineer role** | [SQL Optimization](./agents/data-engineer/sql-optimization-interviewer/SKILL.md), then [Pipeline Architect](./agents/data-engineer/pipeline-architect-interviewer/SKILL.md) |
-| **DevOps / SRE role** | [Kubernetes](./agents/devops-sre/kubernetes-interviewer/SKILL.md), [Monitoring & Alerting](./agents/devops-sre/monitoring-alerting-interviewer/SKILL.md) |
-| **ML Engineer role** | [ML System Design](./agents/ml-engineer/ml-system-design-interviewer/SKILL.md), [Deep Learning](./agents/ml-engineer/deep-learning-interviewer/SKILL.md) |
-| **Behavioral / culture fit prep** | [Leadership Principles](./agents/behavioral/leadership-principles-interviewer/SKILL.md) |
+### Option 2: Use with Other AI Assistants
 
-For a structured 8-week curriculum, see the [Learning Path](./references/learning-path.md).
+Each skill is a markdown file with clear instructions. Copy the content and paste it into your AI assistant of choice (ChatGPT, Claude.ai, etc.)
+
+### Option 3: Create Your Own Skill
+
+1. Copy `templates/skill-template.md`
+2. Fill in your topic, role, and questions
+3. Add it to the appropriate `agents/` directory
+4. Submit a PR!
 
 ---
 
-## All 30 Skills
+## 📚 Roster
 
-### Entry Level (SWE-I / SWE-Intern)
-
-| Skill | Topic | Difficulty | Description |
-|-------|-------|------------|-------------|
-| [Arrays & HashMaps](./agents/swe-i/arrays-hashmaps-interviewer/SKILL.md) | Data Structures | Easy-Medium | Two pointers, sliding window, frequency counting |
-| [Linked Lists](./agents/swe-i/linked-lists-interviewer/SKILL.md) | Data Structures | Easy | Reversal, merging, cycle detection |
-| [Binary Trees](./agents/swe-i/binary-trees-interviewer/SKILL.md) | Trees | Easy-Medium | Traversals, BFS/DFS, basic operations |
-| [Recursion Basics](./agents/swe-i/recursion-basics-interviewer/SKILL.md) | Algorithms | Easy | Base cases, call stacks, simple problems |
-
-### Mid Level (SWE-II / Backend)
+### 🌱 Entry Level (SWE-I / SWE-Intern)
 
 | Skill | Topic | Difficulty | Description |
 |-------|-------|------------|-------------|
-| [URL Shortener](./agents/systems-design/url-shortener-interviewer/SKILL.md) | System Design | Medium | Distributed systems, scaling, trade-offs |
-| [Rate Limiter](./agents/systems-design/rate-limiter-interviewer/SKILL.md) | System Design | Medium | Token bucket, sliding window, Redis |
-| [Graph Algorithms](./agents/swe-ii/graph-algorithms-interviewer/SKILL.md) | Algorithms | Medium | BFS, DFS, Dijkstra, topological sort |
-| [Dynamic Programming](./agents/swe-ii/dynamic-programming-interviewer/SKILL.md) | Algorithms | Medium-Hard | Memoization, tabulation, common patterns |
+| [Arrays & HashMaps](./agents/swe-i/arrays-hashmaps-interviewer.md) | Data Structures | Easy-Medium | Two pointers, sliding window, frequency counting |
+| Linked Lists | Data Structures | Easy | Reversal, merging, cycle detection |
+| Binary Trees | Trees | Easy-Medium | Traversals, BFS/DFS, basic operations |
+| Recursion Basics | Algorithms | Easy | Base cases, call stacks, simple problems |
 
-### Data Engineering
-
-| Skill | Topic | Difficulty | Description |
-|-------|-------|------------|-------------|
-| [SQL Optimization](./agents/data-engineer/sql-optimization-interviewer/SKILL.md) | Database | Medium-Hard | Indexing, query plans, schema design |
-| [Pipeline Architect](./agents/data-engineer/pipeline-architect-interviewer/SKILL.md) | Data Engineering | Medium-Hard | End-to-end pipelines, Kafka/Flink, scaling, failure modes |
-| [Schema Design](./agents/data-engineer/schema-design-interviewer/SKILL.md) | Data Engineering | Medium-Hard | Dimensional modeling, SCDs, star schema, query optimization |
-| [Data Pipeline Design](./agents/data-engineer/data-pipeline-design-interviewer/SKILL.md) | Data Engineering | Medium | ETL/ELT, Apache Airflow, data quality |
-| [Data Modeling](./agents/data-engineer/data-modeling-interviewer/SKILL.md) | Data Engineering | Medium | Star schema, snowflake, data warehouses |
-
-### Systems Architecture & Distributed Systems
+### 🚀 Mid Level (SWE-II / Backend / Frontend)
 
 | Skill | Topic | Difficulty | Description |
 |-------|-------|------------|-------------|
-| [Database Architecture](./agents/systems-design/database-architecture-interviewer/SKILL.md) | Databases | Medium-Hard | SQL vs NoSQL, Indexing, ACID, Sharding |
-| [Microservices Architecture](./agents/systems-design/microservices-architecture-interviewer/SKILL.md) | Architecture | Medium-Hard | DDD, API Gateways, Sagas, Resilience |
-| [Distributed Systems Core](./agents/systems-design/distributed-systems-interviewer/SKILL.md) | Dist. Systems | Hard | CAP Theorem, Quorums, Consensus, Clocks |
-| [Caching Architecture](./agents/systems-design/caching-architecture-interviewer/SKILL.md) | Caching | Medium-Hard | Topologies, Eviction, Consistency, Stampedes |
-| [Message Queues](./agents/systems-design/message-queues-interviewer/SKILL.md) | Messaging | Medium-Hard | Kafka vs RabbitMQ, DLQs, Idempotency, Ordering |
-| [API Design & Gateways](./agents/systems-design/api-design-interviewer/SKILL.md) | API Design | Medium | REST, Pagination, Auth, API Gateways |
-| [Networking & Load Balancing](./agents/systems-design/networking-load-balancing-interviewer/SKILL.md) | Networking | Medium-Hard | OSI Layers, L4/L7 LBs, TLS, Consistent Hashing |
+| [URL Shortener](./agents/systems-design/url-shortener-interviewer.md) | System Design | Medium | Distributed systems, scaling, trade-offs |
+| [Rate Limiter](./agents/systems-design/rate-limiter-interviewer.md) | System Design | Medium | Token bucket, sliding window, Redis |
+| Graph Algorithms | Algorithms | Medium | BFS, DFS, Dijkstra, topological sort |
+| Dynamic Programming | Algorithms | Medium-Hard | Memoization, tabulation, common patterns |
 
-### DevOps / SRE
+### 🏗️ Specialized Roles
 
-| Skill | Topic | Difficulty | Description |
-|-------|-------|------------|-------------|
-| [Reliability & Observability](./agents/systems-design/reliability-observability-interviewer/SKILL.md) | Reliability | Medium-Hard | Circuit Breakers, RED Metrics, RTO/RPO, Retries |
-| [Kubernetes Fundamentals](./agents/devops-sre/kubernetes-interviewer/SKILL.md) | Infrastructure | Medium | Pods, services, deployments |
-| [CI/CD Pipeline Design](./agents/devops-sre/cicd-pipeline-interviewer/SKILL.md) | DevOps | Medium | GitHub Actions, Jenkins, testing strategies |
-| [Monitoring & Alerting](./agents/devops-sre/monitoring-alerting-interviewer/SKILL.md) | SRE | Medium | Prometheus, Grafana, SLIs/SLOs/SLAs |
-
-### Machine Learning Engineer
+#### Data Engineer
 
 | Skill | Topic | Difficulty | Description |
 |-------|-------|------------|-------------|
-| [ML System Design](./agents/ml-engineer/ml-system-design-interviewer/SKILL.md) | ML Engineering | Hard | Feature stores, model serving, A/B testing |
-| [Deep Learning Interview](./agents/ml-engineer/deep-learning-interviewer/SKILL.md) | ML Theory | Hard | CNNs, RNNs, Transformers, training dynamics |
+| [SQL Optimization](./agents/data-engineer/sql-optimization-interviewer.md) | Database | Medium-Hard | Indexing, query plans, schema design |
+| [Pipeline Architect](./agents/data-engineer/pipeline-architect-interviewer.md) | Data Engineering | Medium-Hard | End-to-end pipelines, Kafka/Flink, scaling, failure modes |
+| [Schema Design](./agents/data-engineer/schema-design-interviewer.md) | Data Engineering | Medium-Hard | Dimensional modeling, SCDs, star schema, query optimization |
+| Data Pipeline Design | Data Engineering | Medium | ETL/ELT, Apache Airflow, data quality |
+| Data Modeling | Data Engineering | Medium | Star schema, snowflake, data warehouses |
 
-### Senior+ Level (SWE-III / Senior / Staff)
+#### Systems Architecture & Distributed Systems
 
 | Skill | Topic | Difficulty | Description |
 |-------|-------|------------|-------------|
-| [Design Twitter/X](./agents/systems-design/twitter-interviewer/SKILL.md) | System Design | Hard | Feed generation, fan-out, consistency |
-| [Design Uber](./agents/systems-design/uber-interviewer/SKILL.md) | System Design | Hard | Real-time tracking, matching, maps |
-| [Design a Search Engine](./agents/systems-design/search-engine-interviewer/SKILL.md) | System Design | Hard | Indexing, ranking, query understanding |
-| [Leadership Principles](./agents/behavioral/leadership-principles-interviewer/SKILL.md) | Behavioral | All Levels | STAR method, cross-functional collaboration |
+| [Database Architecture](./agents/systems-design/database-architecture-interviewer.md) | Databases | Medium-Hard | SQL vs NoSQL, Indexing, ACID, Sharding |
+| [Microservices Architecture](./agents/systems-design/microservices-architecture-interviewer.md) | Architecture | Medium-Hard | DDD, API Gateways, Sagas, Resilience |
+| [Distributed Systems Core](./agents/systems-design/distributed-systems-interviewer.md) | Dist. Systems | Hard | CAP Theorem, Quorums, Consensus, Clocks |
+| [Caching Architecture](./agents/systems-design/caching-architecture-interviewer.md) | Caching | Medium-Hard | Topologies, Eviction, Consistency, Stampedes |
+| [Message Queues](./agents/systems-design/message-queues-interviewer.md) | Messaging | Medium-Hard | Kafka vs RabbitMQ, DLQs, Idempotency, Ordering |
+| [API Design & Gateways](./agents/systems-design/api-design-interviewer.md) | API Design | Medium | REST, Pagination, Auth, API Gateways |
+| [Networking & Load Balancing](./agents/systems-design/networking-load-balancing-interviewer.md) | Networking | Medium-Hard | OSI Layers, L4/L7 LBs, TLS, Consistent Hashing |
+
+#### DevOps / SRE
+
+| Skill | Topic | Difficulty | Description |
+|-------|-------|------------|-------------|
+| [Reliability & Observability](./agents/systems-design/reliability-observability-interviewer.md) | Reliability | Medium-Hard | Circuit Breakers, RED Metrics, RTO/RPO, Retries |
+| Kubernetes Fundamentals | Infrastructure | Medium | Pods, services, deployments |
+| CI/CD Pipeline Design | DevOps | Medium | GitHub Actions, Jenkins, testing strategies |
+| Monitoring & Alerting | SRE | Medium | Prometheus, Grafana, SLIs/SLOs/SLAs |
+
+#### Machine Learning Engineer
+
+| Skill | Topic | Difficulty | Description |
+|-------|-------|------------|-------------|
+| ML System Design | ML Engineering | Hard | Feature stores, model serving, A/B testing |
+| Deep Learning Interview | ML Theory | Hard | CNNs, RNNs, Transformers, training dynamics |
+
+### 👑 Senior+ Level (SWE-III / Senior / Staff)
+
+| Skill | Topic | Difficulty | Description |
+|-------|-------|------------|-------------|
+| Design Twitter/X | System Design | Hard | Feed generation, fan-out, consistency |
+| [Design Uber](./agents/systems-design/uber-interviewer.md) | System Design | Hard | Real-time tracking, matching, maps |
+| Design a Search Engine | System Design | Hard | Indexing, ranking, query understanding |
+| Leadership Principles | Behavioral | All Levels | STAR method, cross-functional collaboration |
 
 ---
 
-## How It Works
+## 🎯 How It Works
 
-### What happens in a session
+### Skill Structure
 
-1. **You invoke a skill** — The AI adopts a specific interviewer persona
-2. **Warm-up (5-10 min)** — Foundational questions to calibrate your level
-3. **Core concepts (15-20 min)** — Deep dive with visual explanations and follow-ups
-4. **Problem solving (20-30 min)** — Realistic problems with progressive hints when you're stuck
-5. **Scorecard (5 min)** — Evaluation across multiple dimensions (Novice / Intermediate / Expert) with specific strengths, improvement areas, and resource recommendations
+Each skill follows a consistent format:
 
-### The hint system
+```
+🎭 Persona
+   └── Who the AI interviewer is, their style, approach
 
-When you're stuck, ask for a hint. The interviewer provides hints at increasing levels:
+🎯 Core Mission  
+   └── What you'll learn and practice
+
+📋 Interview Structure
+   └── Phases: Warm-up → Core Concepts → Problem Solving → Wrap-up
+
+🔧 Interactive Elements
+   └── ASCII diagrams, Remotion components for visual learning
+
+💡 Hint System
+   └── 4 levels: Gentle nudge → Direction → Partial solution → Full walkthrough
+
+📝 Problem Bank
+   └── Curated questions with optimal solutions and follow-ups
+
+🏆 Evaluation Rubric
+   └── How to assess performance and identify weak areas
+
+📚 Resources
+   └── Books, courses, and practice problems for further study
+```
+
+### Hint System Explained
+
+When you're stuck, the interviewer provides hints at increasing detail levels:
 
 | Level | Type | Example |
 |-------|------|---------|
@@ -170,104 +204,66 @@ When you're stuck, ask for a hint. The interviewer provides hints at increasing 
 
 **Pro tip**: Try to solve with Level 1 hints first. The struggle is where learning happens!
 
-### Visual learning
+---
 
-Every skill includes ASCII diagrams for complex concepts:
+## 🎨 Visual Learning
+
+### ASCII Diagrams
+
+Every skill includes visual explanations:
 
 ```
 Two Pointers Pattern:
 Array: [1, 2, 3, 4, 5, 6], Target: 7
 
-Left ->                    <- Right
+Left →                    ← Right
   1     2  3  4  5     6
-  1+6=7  Found!
+  1+6=7 ✓ Found!
 ```
 
-Each skill also includes [Remotion](https://www.remotion.dev/) React components in `references/remotion-components.md` that can be rendered to video for study groups or tutorial content.
+### Remotion Components
+
+For complex animations, we provide [Remotion](https://www.remotion.dev/) React components:
+
+```tsx
+// Example: Visualizing consistent hashing
+export const ConsistentHashingDemo = () => {
+  const frame = useCurrentFrame();
+  // Animation logic...
+  return <div>{/* Visual representation */}</div>;
+};
+```
+
+Render these to video for:
+- Pre-study review
+- Sharing explanations with study groups
+- Building your own tutorial content
 
 ---
 
-## Example Session
-
-**You**: Use the arrays-hashmaps-interviewer skill and start interviewing me
-
-**AI**: Hey there! Let's jump right in with a warm-up. What's the time complexity of looking up an element in a HashMap, and why?
-
-**You**: I think it's O(1)?
-
-**AI**: Exactly! Though technically it's amortized O(1) — in the worst case with many collisions, it could be O(n). Good. Now, when would you NOT want to use a HashMap?
-
-*[45 minutes of guided practice with hints when needed]*
-
-**AI**: Great session! Here's your evaluation:
-
-| Area | Rating | Notes |
-|------|--------|-------|
-| Problem Understanding | Expert | Asked excellent clarifying questions |
-| Solution Approach | Intermediate | Considered trade-offs but missed optimal |
-| Code Quality | Intermediate | Clean and readable |
-| Edge Cases | Novice | Missed empty input handling |
-
-**Strengths**: Strong problem decomposition, good communication...
-**Improve**: Edge case coverage, complexity analysis of alternative approaches...
-**Resources**: LeetCode 76 (Minimum Window Substring), NeetCode sliding window playlist...
-
----
-
-## Interview Preparation Roadmap
-
-For the full structured curriculum, see the [Learning Path](./references/learning-path.md).
-
-### 8-Week Plan (SWE Track)
-
-| Weeks | Focus | Skills |
-|-------|-------|--------|
-| 1-2 | Foundations | Arrays & HashMaps, Linked Lists, Binary Trees, Recursion |
-| 3-4 | Core System Design | URL Shortener, Database Architecture, Caching |
-| 5-6 | Advanced Design | API Design, Rate Limiter, Message Queues, Microservices |
-| 7-8 | Senior/Staff Level | Uber, Twitter, Distributed Systems, Networking, Reliability |
-
-### Data Engineering Track
-
-SQL Optimization -> Data Pipeline Design -> Pipeline Architect -> Data Modeling -> Schema Design
-
-### DevOps / SRE Track
-
-Kubernetes -> CI/CD Pipeline -> Monitoring & Alerting -> Reliability & Observability
-
-### ML Engineer Track
-
-Deep Learning -> ML System Design
-
-### Tips for Best Results
-
-- **One skill per session** — Don't rush through multiple interviewers in one sitting
-- **Think out loud** — Practice verbalizing your thought process as in a real interview
-- **Try Level 1 hints first** — The struggle is where learning happens
-- **Review your scorecard** — Focus next practice on your lowest-rated dimensions
-- **Revisit after 2 weeks** — Spaced repetition solidifies understanding
-
----
-
-## For Contributors
+## 🛠️ For Contributors
 
 ### Adding a New Skill
 
 1. **Fork the repository**
 2. **Copy the template**:
    ```bash
-   cp -r templates/skill-template agents/{category}/{skill-name}-interviewer
+   cp templates/skill-template.md agents/{role-name}/{agent-name}.md
    ```
-3. **Fill in the template** — Replace all `{{placeholders}}` with your content
-4. **Test your skill** with `claude --plugin-dir ./agents/{category}`
-5. **Submit a PR** with test notes showing it works
+3. **Fill in the template** following our guidelines
+4. **Test your skill** with Claude Code
+5. **Submit a PR** with:
+   - Clear description of what the skill covers
+   - Test notes (how you verified it works)
+   - Any Remotion components included
 
 ### Skill Quality Checklist
 
 - [ ] Clear, consistent persona defined
-- [ ] 3-4 difficulty-appropriate problems with 4-level hints each
-- [ ] At least 2 ASCII diagrams
-- [ ] Evaluation rubric (Novice / Intermediate / Expert format)
+- [ ] 3-4 difficulty-appropriate problems
+- [ ] All 4 hint levels for each problem
+- [ ] At least 2 visual diagrams (ASCII or Remotion)
+- [ ] Evaluation rubric included
 - [ ] Resources section with further reading
 - [ ] Tested with at least one AI assistant
 
@@ -275,38 +271,82 @@ Deep Learning -> ML System Design
 
 ```
 The-Mentor/
-├── README.md
-├── LICENSE
-├── references/
-│   └── learning-path.md          # 8-week curriculum
+├── README.md                 # This file
+├── LICENSE                   # MIT License
 ├── templates/
-│   └── skill-template/           # Template for creating new skills
-│       ├── SKILL.md
-│       └── references/
-│           ├── problems.md
-│           └── remotion-components.md
+│   └── skill-template.md     # Template for new skills
 ├── agents/
-│   ├── swe-i/                    # 4 entry-level skills
-│   ├── swe-ii/                   # 2 mid-level algorithm skills
-│   ├── data-engineer/            # 5 data engineering skills
-│   ├── systems-design/           # 13 system design skills
-│   ├── devops-sre/               # 3 DevOps & SRE skills
-│   ├── ml-engineer/              # 2 ML engineering skills
-│   └── behavioral/               # 1 behavioral skill
-```
-
-Each skill directory contains:
-```
-skill-name-interviewer/
-├── SKILL.md                      # Main interviewer instructions
-└── references/
-    ├── problems.md               # Problem bank with walkthroughs
-    └── remotion-components.md    # Animation components
+│   ├── swe-i/                # Entry level
+│   ├── swe-ii/               # Mid level
+│   ├── swe-iii/              # Senior level
+│   ├── swe-intern/           # Intern level
+│   ├── data-engineer/        # Data engineering
+│   ├── backend-engineer/     # Backend focus
+│   ├── frontend-engineer/    # Frontend focus
+│   ├── devops-sre/           # Infrastructure
+│   ├── machine-learning/     # ML/AI roles
+│   ├── systems-design/       # System design interviews
+│   ├── principal/            # Principal+ level
+│   └── senior-staff/         # Senior Staff level
+├── examples/                 # Example usage sessions
+└── integrations/             # Claude Code, VS Code, etc.
 ```
 
 ---
 
-## Related Projects
+## 📊 Interview Preparation Roadmap
+
+### Week 1-2: Fundamentals (SWE-I Level)
+- [ ] Arrays & HashMaps
+- [ ] Linked Lists
+- [ ] Binary Trees
+- [ ] Recursion
+
+### Week 3-4: Intermediate (SWE-II Level)
+- [ ] Graph Algorithms
+- [ ] Dynamic Programming
+- [ ] Sorting & Searching
+- [ ] System Design (URL Shortener)
+
+### Week 5-6: Advanced Topics
+- [ ] System Design (Twitter, Uber)
+- [ ] Advanced DP
+- [ ] Specialized role skills
+
+### Week 7+: Mock Interviews
+- [ ] Full mock interviews using combined skills
+- [ ] Behavioral practice
+- [ ] Resume review
+
+---
+
+## 📖 Example Session
+
+**You**: Load the Arrays & HashMaps skill and start interviewing me
+
+**Claude**: [Loads skill persona]
+
+> 🎓 **Arrays & HashMaps Interviewer**
+> 
+> Welcome! I'm here to help you master fundamental array and hashmap problems. We'll start with some warm-up questions, then work through problems together.
+>
+> Let's begin: What's the time complexity of looking up an element in a HashMap, and why?
+
+**You**: I think it's O(1)?
+
+**Claude**: Exactly! Though technically it's amortized O(1)... [continues with follow-up]
+
+[45 minutes of guided practice with hints when needed]
+
+**Claude**: Great session! Here's your evaluation:
+- Problem Understanding: 4/5
+- Solution Approach: 4/5
+- Code Quality: 3/5
+- [Specific feedback and resources]
+
+---
+
+## 🔗 Related Projects
 
 - [System Design Primer](https://github.com/donnemartin/system-design-primer) - Learn system design
 - [NeetCode](https://neetcode.io/) - Practice problems by pattern
@@ -314,13 +354,19 @@ skill-name-interviewer/
 
 ---
 
-## License
+## 📜 License
 
 MIT License - see [LICENSE](./LICENSE) file for details.
+
+Contributions welcome! Please read our [Contributing Guide](./CONTRIBUTING.md) (coming soon).
 
 ---
 
 <p align="center">
   <strong>Ready to ace your next interview?</strong><br>
-  Pick a skill from the roster above and start practicing!
+  Pick a skill from the <a href="#-roster">Roster</a> and start practicing!
+</p>
+
+<p align="center">
+  ⭐ Star this repo if it helps you land your dream job! ⭐
 </p>

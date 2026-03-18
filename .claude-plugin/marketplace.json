@@ -9,7 +9,7 @@
       "name": "coding-interview-agent",
       "source": {
         "source": "github",
-        "repo": "ps06756/The-Mentor"
+        "repo": "ps06756/The-Interview-Mentor"
       },
       "description": "AI-powered mock interview skills for software engineering interview preparation. 15 interviewer personas covering coding (arrays, hashmaps), system design (Uber, URL shortener, rate limiter, caching, databases, microservices, distributed systems, networking, message queues, API design, reliability), and data engineering (SQL optimization, pipeline architecture, schema design). Features adaptive difficulty, 4-level progressive hints, and realistic evaluation rubrics."
     }
