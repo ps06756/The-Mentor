@@ -192,14 +192,20 @@ Kahn's Algorithm:
 
 ## Hint System
 
-### Problem 1: Number of Islands (Medium)
-**Problem**: Given a 2D grid of '1's (land) and '0's (water), count the number of islands. An island is surrounded by water and formed by connecting adjacent lands horizontally or vertically.
+### Problem 1: Word Ladder (Medium)
+**Production Context**: This pattern powers spell checkers and recommendation engines — finding shortest transformation paths.
+
+**Problem**: Given two words and a dictionary, find the length of the shortest transformation sequence from beginWord to endWord, changing one letter at a time. Each intermediate word must exist in the dictionary.
 
 **Hints**:
-- **Level 1**: "Think of each cell as a node. When are two nodes connected? What does an island correspond to in graph terms?"
-- **Level 2**: "Each island is a connected component. How do you find all nodes in a connected component? What traversal would work?"
-- **Level 3**: "Start BFS or DFS from each unvisited '1'. Mark all reachable '1's as visited. Each time you start a new traversal, that's a new island."
-- **Level 4**: "For each cell (i,j) where grid[i][j]=='1' and not visited: increment count, then BFS/DFS to mark all connected '1' cells. Directions: up, down, left, right. Time: O(m*n), Space: O(m*n)."
+- **Level 1**: "This looks like a string problem, but is it? What are the 'nodes' and 'edges' here?"
+- **Level 2**: "Each word is a node. Two words are connected by an edge if they differ by exactly one letter. Now it's a graph problem — what algorithm finds the shortest path in an unweighted graph?"
+- **Level 3**: "BFS from beginWord. At each step, try changing each character to a-z and check if the result is in the dictionary. Use a visited set to avoid cycles."
+- **Level 4**: "Optimization: Instead of checking all 26 replacements, precompute a map of patterns: 'h*t' → ['hot', 'hat', 'hit']. BFS using patterns as intermediate nodes (bidirectional BFS for further optimization)."
+
+**Follow-Up Constraints**:
+- "Now return the actual path, not just the length"
+- "Now find ALL shortest paths"
 
 ### Problem 2: Course Schedule / Topological Sort (Medium)
 **Problem**: There are numCourses courses labeled 0 to numCourses-1. Given prerequisite pairs, determine if you can finish all courses. (Detect if a valid topological ordering exists, i.e., no cycle in the directed graph.)
@@ -210,14 +216,20 @@ Kahn's Algorithm:
 - **Level 3**: "Use Kahn's algorithm: compute in-degrees, start with nodes that have in-degree 0, process them and decrement neighbors' in-degrees. If you process all nodes, no cycle exists."
 - **Level 4**: "Build adjacency list and in-degree array. Queue all nodes with in-degree 0. While queue not empty: pop node, decrement in-degrees of neighbors, enqueue any that reach 0. Return true if processed count equals numCourses. Time: O(V+E)."
 
-### Problem 3: Shortest Path in Weighted Graph (Medium-Hard)
-**Problem**: Given a network of n nodes and weighted edges, find the shortest time for a signal to reach all nodes from a given source. Return -1 if not all nodes are reachable. (Network Delay Time - LeetCode 743)
+### Problem 3: Accounts Merge (Medium)
+**Production Context**: This pattern powers identity resolution — merging duplicate user accounts across systems.
+
+**Problem**: Given a list of accounts where each account has a name and a list of emails, merge accounts belonging to the same person. Two accounts belong to the same person if they share at least one email.
 
 **Hints**:
-- **Level 1**: "This is a single-source shortest path problem on a weighted graph with non-negative weights. What classic algorithm solves this?"
-- **Level 2**: "Dijkstra's algorithm. What data structure makes it efficient to always pick the unvisited node with the smallest distance?"
-- **Level 3**: "Use a min-heap (priority queue). Initialize all distances to infinity except the source (distance 0). Greedily process the closest unprocessed node and relax its neighbors."
-- **Level 4**: "Build adjacency list. dist = [inf]*n, dist[source]=0. Min-heap = [(0, source)]. While heap: pop (d, u). If d > dist[u], skip. For each neighbor v with weight w: if dist[u]+w < dist[v], update dist[v] and push (dist[v], v). Answer = max(dist). Time: O(E log V)."
+- **Level 1**: "How do you know if two accounts belong to the same person? What data structure tracks 'these things belong together'?"
+- **Level 2**: "This is a Union-Find (Disjoint Set Union) problem. Each email is a node. If two emails appear in the same account, union them."
+- **Level 3**: "Build a Union-Find. For each account, union all its emails together. Then group emails by their root representative. Sort each group alphabetically."
+- **Level 4**: "Implementation: 1) Create email→name map. 2) Union-Find with path compression + union by rank. 3) For each account, union(emails[0], emails[i]) for all i. 4) Group by find(email). 5) Sort groups, prepend name."
+
+**Follow-Up Constraints**:
+- "Now accounts arrive as a stream. How do you handle incremental merging?"
+- "What if the same email appears with different names? How do you resolve conflicts?"
 
 ---
 

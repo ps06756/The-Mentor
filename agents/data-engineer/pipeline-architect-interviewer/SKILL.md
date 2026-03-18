@@ -45,6 +45,7 @@ Help candidates master data pipeline architecture for senior data engineering in
 3. **Tool Selection & Justification**: Kafka vs Kinesis, Spark vs Flink, Snowflake vs BigQuery with real trade-offs
 4. **Failure Mode Analysis**: Idempotency, dead letter queues, backpressure, circuit breakers
 5. **Scaling Strategies**: Handling 10x growth, late arrivals, deduplication, and data skew
+6. **Orchestration & Operability**: Airflow DAG patterns, data quality checks (Great Expectations, dbt tests), incremental vs full loads, monitoring and alerting
 
 ---
 
@@ -76,6 +77,11 @@ Present failure modes and ask for recovery strategies:
 - If the candidate explicitly asks for easier/harder problems, adjust using the Problem Bank in references/problems.md
 - If the candidate answers warm-up questions poorly, stay at the easiest problem level
 - If the candidate answers everything quickly, skip to the hardest problems and add follow-up constraints
+
+### Difficulty Calibration
+- **Mid-Level (3-5 YOE)**: Focus on Phases 1-2. Present ETL pipeline design problems with Airflow. Probe on data quality checks, incremental loading, and basic orchestration patterns.
+- **Senior (5-8 YOE)**: Full interview. Present real-time analytics and deduplication problems. Probe on tool selection trade-offs and failure modes.
+- **Staff+ (8+ YOE)**: Skip Phase 1. Present late arrivals, schema evolution, and cost optimization problems. Expect discussion of data mesh, platform engineering, and organizational concerns.
 
 ### Scorecard Generation
 At the end of the final phase, generate a scorecard table using the Evaluation Rubric below. Rate the candidate in each dimension with a brief justification. Provide 3 specific strengths and 3 actionable improvement areas. Recommend 2-3 resources for further study based on identified gaps.
@@ -311,6 +317,38 @@ Your upstream service added a new field `user_tier` to the JSON events. Your Spa
      - Log schema version in metrics
 
   4. Testing: Use schema compatibility checks in CI/CD
+  ```
+
+### Problem 5: ETL Pipeline Design with Data Quality
+
+**Scenario**:
+Design a daily ETL pipeline that ingests data from 5 different sources (3 APIs, 1 SFTP, 1 database), transforms it into a unified customer 360 view, and loads it into Snowflake. The pipeline must complete by 6 AM for analyst dashboards.
+
+**Candidate Struggles With**: Orchestration and data quality
+
+**Hints**:
+- **Level 1**: "What happens if one of the 5 sources is late or unavailable? Does the whole pipeline wait?"
+- **Level 2**: "Consider separating ingestion from transformation. Use Airflow sensors for source availability, then trigger downstream tasks independently."
+- **Level 3**: "Add data quality gates between ingestion and transformation: row count checks, schema validation, freshness checks. If a source fails quality checks, use the last good snapshot and alert the team."
+- **Level 4**:
+  ```
+  Airflow DAG Structure:
+
+  [Sensor: API_1] --> [Ingest API_1] --> [Quality Check] --+
+  [Sensor: API_2] --> [Ingest API_2] --> [Quality Check] --+--> [Transform] --> [Load Snowflake] --> [dbt Tests]
+  [Sensor: SFTP]  --> [Ingest SFTP]  --> [Quality Check] --+
+  [Sensor: DB]    --> [Ingest DB]    --> [Quality Check] --+
+
+  Quality checks at each gate:
+  - Row count within 20% of yesterday
+  - Schema matches expected (no new/missing columns)
+  - No nulls in required fields
+  - Freshness: data timestamp within 24 hours
+
+  Failure strategy:
+  - Source failure → use last good snapshot, alert on-call
+  - Transform failure → retry 3x with exponential backoff
+  - Load failure → retry, then manual intervention
   ```
 
 ---
