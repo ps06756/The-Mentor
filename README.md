@@ -1,4 +1,4 @@
-# 🎓 The Mentor
+# 🎓 The Interview Mentor
 
 > **100+ AI Interview Agents for Claude Code**
 
