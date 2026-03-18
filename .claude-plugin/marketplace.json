@@ -1,12 +1,12 @@
 {
-  "name": "Interview Preparation Agents",
+  "name": "coding-interview-preparation-agents-marketplace",
   "owner": {
     "name": "Pratik Singhal",
     "email": "dev@pratiksinghal.net"
   },
   "plugins": [
     {
-      "name": "The Mentor: Helping you prepare for coding interviews",
+      "name": "coding-interview-agent",
       "source": {
         "source": "github",
         "repo": "ps06756/The-Mentor"
