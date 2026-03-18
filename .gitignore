@@ -205,3 +205,11 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Planning artifacts
+task_plan.md
+findings.md
+progress.md
+
+# Skill packages
+*.skill
