@@ -45,7 +45,7 @@ curl -L https://github.com/ps06756/The-Mentor/archive/refs/tags/v1.0.0.zip -o Th
 unzip The-Mentor.zip
 ```
 
-Or manually download from: https://github.com/ps06756/The-Mentor/archive/refs/tags/v1.0.0.zip
+Or manually download from: [https://github.com/ps06756/The-Mentor/archive/refs/tags/v1.0.0.zip](https://github.com/ps06756/The-Interview-Mentor/archive/refs/tags/v1.0.1.zip)
 
 ### Step 2: Install in Claude Code
 
