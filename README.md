@@ -4,6 +4,8 @@
 
 A collection of specialized AI skills for Claude Code and other agentic solutions to help you prepare for software engineering interviews at top tech companies.
 
+![Demo](./assets/demo.gif)
+
 ---
 
 ## 🌟 What is this?
